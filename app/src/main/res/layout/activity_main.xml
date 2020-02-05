@@ -14,7 +14,14 @@
         android:subtitleTextAppearance="Programación Móvil 2020"
         android:titleTextAppearance="Programación Móvil 2020"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Programación Móvil 2020"
+            android:textColor="#fff" />
+    </Toolbar>
 
     <TextView
         android:layout_marginStart="16dp"
@@ -71,10 +78,10 @@
         app:layout_constraintTop_toBottomOf="@+id/tEntry" />
 
     <Button
-        android:layout_margin="16dp"
         android:id="@+id/b0"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="16dp"
         android:background="#2196F3"
         android:text="0"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
@@ -84,10 +91,10 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <Button
-        android:layout_margin="16dp"
         android:id="@+id/b1"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="16dp"
         android:background="#2196F3"
         android:text="1"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
@@ -97,12 +104,13 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <Button
-        android:layout_margin="16dp"
         android:id="@+id/bClear"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="16dp"
         android:background="#0069C0"
         android:text="CLEAR"
+        android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
