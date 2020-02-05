@@ -3,8 +3,17 @@ package com.example.bin2dec;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements  View.OnClickListener {
+
+    final Button b0Btn = (Button) findViewById(R.id.b0);
+    final Button b1Btn = (Button) findViewById(R.id.b1);
+    final Button clearBtn = (Button) findViewById(R.id.bClear);
+
+    String binaryText = "";
+    String decText = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,12 +21,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    /**
-     * Convert a binary to decimal.
-     * @param bin binary number
-     * @return decimal number
-     */
-    int bin2Dec(String bin) {
-        return Integer.parseInt(bin, 2);
+    void addDigit(String digit) {
+        this.binaryText += digit;
+        this.bin2Dec();
+    }
+
+    void resetText() {
+        this.binaryText = "";
+    }
+
+    void bin2Dec() {
+        int dec = Integer.parseInt(this.binaryText, 2);
+        this.decText = dec + "";
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.b0: {
+                this.addDigit("0");
+                break;
+            }
+            case R.id.b1: {
+                this.addDigit("1");
+                break;
+            }
+            case R.id.bClear: {
+                this.resetText();
+                break;
+            }
+        }
     }
 }
